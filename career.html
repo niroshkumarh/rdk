@@ -1,0 +1,1908 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career Opportunities - RDK Global Finance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#052169; /* deep navy */
+      --accent:#21c55d; /* green */
+      --ink:#0f172a;
+      --muted:#475569;
+      --light-blue:#f0f9ff;
+      --hero-bg:#e0f2fe;
+    }
+    body{font-family:'League Spartan',sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--light-blue),#f2f7ff);overflow-x:hidden;margin:0;padding:0}
+    
+    /* Smooth scrolling */
+    html{scroll-behavior:smooth;margin:0;padding:0}
+    
+    /* ===== PAGE LOADER ===== */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+      overflow: hidden;
+      background-image: none !important;
+      background-color: #FFFFFF !important;
+    }
+    
+    progress, 
+    ::-webkit-progress-bar, 
+    ::-moz-progress-bar,
+    .progress,
+    .loading-bar,
+    [class*="progress"],
+    [class*="loading-bar"],
+    [id*="progress"],
+    [id*="loading-bar"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+    
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    /* Rollercoaster Loader */
+    .loader-wrapper {
+      position: fixed;
+      z-index: 99999;
+      height: 2em;
+      width: 2em;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    
+    .loader-wrapper:before {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+    }
+    
+    .loader-wrapper .loader {
+      width: 148px;
+      height: 100px;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    
+    .loader-wrapper .loader:after {
+      content: "";
+      top: auto;
+      position: absolute;
+      display: block;
+      animation: shadow 1.2s infinite linear;
+      -moz-animation: shadow 1.2s infinite linear;
+      -webkit-animation: shadow 1.2s infinite linear;
+      bottom: 0em;
+      left: 0;
+      height: 0.25em;
+      width: 1em;
+      border-radius: 50%;
+      background-color: #001A6E;
+      opacity: 0.3;
+    }
+    
+    .loader-wrapper .loader .roller,
+    .loader-wrapper .loader .roller:last-child {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: rollercoaster 1.2s infinite linear;
+      -webkit-transform: rotate(135deg);
+      -moz-animation: rollercoaster 1.2s infinite linear;
+      -moz-transform: rotate(135deg);
+      animation: rollercoaster 1.2s infinite linear;
+      transform: rotate(135deg);
+    }
+    
+    .loader-wrapper .loader .roller:last-child {
+      left: auto;
+      right: 0;
+      -webkit-transform: rotate(-45deg);
+      -webkit-animation: rollercoaster2 1.2s infinite linear;
+      -moz-transform: rotate(-45deg);
+      -moz-animation: rollercoaster2 1.2s infinite linear;
+      transform: rotate(-45deg);
+      animation: rollercoaster2 1.2s infinite linear;
+    }
+    
+    .loader-wrapper .loader .roller:before,
+    .loader-wrapper .loader .roller:last-child:before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: #001A6E;
+      border-radius: 50%;
+    }
+    
+    .loader-wrapper .loader.loader-2:after {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+    
+    .loader-wrapper .loader.loader-2 .roller {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+    
+    .loader-wrapper .loader.loader-3:after {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    
+    .loader-wrapper .loader.loader-3 .roller {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    
+    @-webkit-keyframes rollercoaster {
+      0% { -webkit-transform: rotate(135deg); }
+      8% { -webkit-transform: rotate(240deg); }
+      20% { -webkit-transform: rotate(300deg); }
+      40% { -webkit-transform: rotate(380deg); }
+      45% { -webkit-transform: rotate(440deg); }
+      50% { -webkit-transform: rotate(495deg); opacity: 1; }
+      50.1% { -webkit-transform: rotate(495deg); opacity: 0; }
+      100% { -webkit-transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @-webkit-keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; -webkit-transform: rotate(-45deg); }
+      58% { -webkit-transform: rotate(-160deg); }
+      70% { -webkit-transform: rotate(-240deg); }
+      80% { -webkit-transform: rotate(-300deg); }
+      90% { -webkit-transform: rotate(-340deg); }
+      100% { -webkit-transform: rotate(-405deg); }
+    }
+    
+    @-webkit-keyframes shadow {
+      0% { opacity: 0.3; -webkit-transform: translateX(65px) scale(0.5, 0.5); }
+      8% { -webkit-transform: translateX(30px) scale(2, 2); }
+      13% { -webkit-transform: translateX(0px) scale(1.3, 1.3); }
+      30% { -webkit-transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { -webkit-transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { -webkit-transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { -webkit-transform: translateX(145px) scale(1.2, 1.2); }
+      80% { -webkit-transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { -webkit-transform: translateX(80px) scale(0.8, 0.8); }
+      100% { -webkit-transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    @-moz-keyframes rollercoaster {
+      0% { -moz-transform: rotate(135deg); }
+      8% { -moz-transform: rotate(240deg); }
+      20% { -moz-transform: rotate(300deg); }
+      40% { -moz-transform: rotate(380deg); }
+      45% { -moz-transform: rotate(440deg); }
+      50% { -moz-transform: rotate(495deg); opacity: 1; }
+      50.1% { -moz-transform: rotate(495deg); opacity: 0; }
+      100% { -moz-transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @-moz-keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; -moz-transform: rotate(-45deg); }
+      58% { -moz-transform: rotate(-160deg); }
+      70% { -moz-transform: rotate(-240deg); }
+      80% { -moz-transform: rotate(-300deg); }
+      90% { -moz-transform: rotate(-340deg); }
+      100% { -moz-transform: rotate(-405deg); }
+    }
+    
+    @-moz-keyframes shadow {
+      0% { opacity: 0.3; -moz-transform: translateX(65px) scale(0.5, 0.5); }
+      8% { -moz-transform: translateX(30px) scale(2, 2); }
+      13% { -moz-transform: translateX(0px) scale(1.3, 1.3); }
+      30% { -moz-transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { -moz-transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { -moz-transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { -moz-transform: translateX(145px) scale(1.2, 1.2); }
+      80% { -moz-transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { -moz-transform: translateX(80px) scale(0.8, 0.8); }
+      100% { -moz-transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    @keyframes rollercoaster {
+      0% { transform: rotate(135deg); }
+      8% { transform: rotate(240deg); }
+      20% { transform: rotate(300deg); }
+      40% { transform: rotate(380deg); }
+      45% { transform: rotate(440deg); }
+      50% { transform: rotate(495deg); opacity: 1; }
+      50.1% { transform: rotate(495deg); opacity: 0; }
+      100% { transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; transform: rotate(-45deg); }
+      58% { transform: rotate(-160deg); }
+      70% { transform: rotate(-240deg); }
+      80% { transform: rotate(-300deg); }
+      90% { transform: rotate(-340deg); }
+      100% { transform: rotate(-405deg); }
+    }
+    
+    @keyframes shadow {
+      0% { opacity: 0.3; transform: translateX(65px) scale(0.5, 0.5); }
+      8% { transform: translateX(30px) scale(2, 2); }
+      13% { transform: translateX(0px) scale(1.3, 1.3); }
+      30% { transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { transform: translateX(145px) scale(1.2, 1.2); }
+      80% { transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { transform: translateX(80px) scale(0.8, 0.8); }
+      100% { transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    body.loading {
+      overflow: hidden;
+    }
+
+    /* ===== NAVBAR (Desktop Design) ===== */
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px 40px 60px;
+      isolation: isolate;
+      position: fixed;
+      width: 100%;
+      height: 124px;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #F1F7FF;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Hamburger menu button - hidden on desktop */
+    .navbar-toggler {
+      display: none;
+      border: none;
+      padding: 4px 8px;
+      background: transparent;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    /* Mobile Contact Button - Hidden on desktop */
+    .mobile-nav-contact {
+      display: none;
+    }
+    
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 30px;
+      height: 3px;
+      background: #001A6E;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background: #001A6E;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler-icon::before {
+      top: -10px;
+    }
+    
+    .navbar-toggler-icon::after {
+      bottom: -10px;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background: transparent;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--brand);
+      width: 136px;
+      height: 100px;
+      z-index: 0;
+    }
+    
+    .logo-image {
+      height: 100px;
+      width: 136px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .navbar-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .navbar-center {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+    
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      width: 452px;
+      height: 64px;
+      z-index: 2;
+      background: #FFFFFF;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0px;
+      gap: 10px;
+      width: 113px;
+      height: 64px;
+      background: transparent;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: 0.02em;
+      color: #001A6E;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .nav-link:first-child {
+      border-radius: 15px 0px 0px 15px;
+    }
+    
+    .nav-link:last-child {
+      border-radius: 0px 15px 15px 0px;
+    }
+
+    /* Desktop-only: force middle items (Services, About us) to be square */
+    @media (min-width: 992px) {
+      .navbar-nav .nav-item:not(:first-child):not(:last-child) .nav-link {
+        border-radius: 0px 0px 0px 0px;
+      }
+      /* Ensure Home keeps rounded left corners on hover/active */
+      .navbar-nav .nav-item:first-child .nav-link:hover,
+      .navbar-nav .nav-item:first-child .nav-link.active {
+        border-radius: 15px 0px 0px 15px;
+      }
+    }
+    
+    .nav-link:hover {
+      background: #001A6E;
+      color: #FFFFFF;
+    }
+    
+    .navbar-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0px;
+      gap: 16px;
+      width: 223px;
+      height: 64px;
+      z-index: 3;
+      flex-shrink: 0;
+    }
+    
+    .btn-grievance {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      width: 111px;
+      height: 34px;
+      border: 1px solid #001A6E;
+      border-radius: 37px;
+      background: #FFFFFF;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: #001A6E;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-grievance:hover {
+      background: #001A6E;
+      color: #FFFFFF;
+    }
+    
+    .btn-contact {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      width: 96px;
+      height: 34px;
+      background: #89AC46;
+      border-radius: 30px;
+      border: none;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-contact:hover {
+      background: #74a93d;
+      color: #FFFFFF;
+    }
+
+    /* ===== CAREER MOBILE LAYOUT ===== */
+    /* Mobile wrapper - hidden on desktop */
+    .career-mobile-wrapper {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+    }
+    
+    .career-mobile-image {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+    }
+    
+    .career-mobile-img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    
+    .career-mobile-form {
+      padding: 30px 20px;
+      width: 100%;
+    }
+    
+    .career-mobile-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #89AC46;
+      margin: 0 0 15px 0;
+      text-align: left;
+    }
+    
+    .career-mobile-subtitle {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin: 0 0 25px 0;
+      line-height: 1.5;
+    }
+    
+    .career-mobile-form-content {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .career-form-input,
+    .career-form-textarea {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #FFFFFF;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 14px;
+      color: #000000;
+      box-sizing: border-box;
+    }
+    
+    .career-form-input::placeholder,
+    .career-form-textarea::placeholder {
+      color: #999999;
+    }
+    
+    .career-upload-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    
+    .career-file-input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .career-upload-label {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 0;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    
+    .career-upload-text {
+      flex: 1;
+      padding: 15px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 14px;
+      color: #999999;
+    }
+    
+    .career-upload-btn {
+      background: #89AC46;
+      border: none;
+      color: #FFFFFF;
+      padding: 15px 20px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 0 10px 10px 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .career-upload-label:hover .career-upload-btn {
+      background: #74a93d;
+    }
+    
+    .career-upload-btn i {
+      font-size: 16px;
+    }
+    
+    .career-apply-btn {
+      width: 100%;
+      padding: 15px;
+      background: #89AC46;
+      border: none;
+      border-radius: 10px;
+      color: #FFFFFF;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    .career-apply-btn:hover {
+      background: #74a93d;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1200px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+    }
+    
+    /* Desktop: Ensure navbar-collapse is always visible */
+    @media (min-width: 992px) {
+      .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .navbar-toggler {
+        display: none !important;
+      }
+      
+      .navbar-left {
+        flex-shrink: 0;
+      }
+      
+      /* Hide mobile menu header on desktop */
+      .mobile-menu-header {
+        display: none !important;
+      }
+      
+      /* Hide mobile contact button on desktop */
+      .mobile-nav-contact {
+        display: none !important;
+      }
+      
+      /* Hide mobile career wrapper on desktop */
+      .career-mobile-wrapper {
+        display: none !important;
+      }
+      
+      /* Show desktop hero on desktop */
+      .hero {
+        display: flex !important;
+      }
+      
+      /* Show desktop sections on desktop */
+      .section {
+        display: block !important;
+      }
+    }
+    
+    @media (max-width: 991.98px){
+        /* Show hamburger button on mobile */
+        .navbar-toggler {
+          display: block;
+          margin-left: 0;
+          z-index: 1001;
+          flex-shrink: 0;
+        }
+        
+        .navbar {
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 20px 20px 15px 20px;
+          height: auto;
+          min-height: 80px;
+        }
+        
+        .navbar-left {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 15px;
+        }
+        
+        .navbar-brand {
+          margin-bottom: 0;
+          flex-shrink: 0;
+        }
+        
+        .logo-image {
+          height: 60px;
+          width: auto;
+        }
+        
+        /* Mobile Contact Button */
+        .mobile-nav-contact {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background: #89AC46;
+          color: #FFFFFF;
+          text-decoration: none;
+          border-radius: 30px;
+          font-family: 'League Spartan', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: 0.02em;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+          flex-shrink: 0;
+          margin-left: auto;
+        }
+        
+        .mobile-nav-contact:hover {
+          background: #74a93d;
+          color: #FFFFFF;
+        }
+        
+        /* Collapsed menu styling - Full screen overlay */
+        .navbar-collapse {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #F1F7FF;
+          padding: 0;
+          box-shadow: none;
+          z-index: 1050;
+          overflow-y: auto;
+          flex-direction: column;
+        }
+        
+        /* Mobile Menu Header */
+        .mobile-menu-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          width: 100%;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .mobile-menu-logo {
+          display: flex;
+          align-items: center;
+        }
+        
+        .mobile-logo-image {
+          height: 50px;
+          width: auto;
+        }
+        
+        .mobile-menu-close {
+          background: #000000;
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          padding: 0;
+          transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-close:hover {
+          background: #333333;
+          transform: scale(1.1);
+        }
+        
+        .close-icon {
+          color: #FFFFFF;
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 1;
+        }
+        
+        .navbar-center {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          background: #FFFFFF;
+        }
+        
+        .navbar-nav {
+          width: 100%;
+          flex-direction: column;
+          background: #FFFFFF;
+          border-radius: 0;
+          box-shadow: none;
+          height: auto;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .nav-item:last-child {
+          border-bottom: none;
+        }
+        
+        .nav-link {
+          width: 100%;
+          padding: 18px 20px;
+          border-radius: 0;
+          margin: 0;
+          text-align: left;
+          font-size: 17px;
+          font-weight: 400;
+          color: #001A6E;
+          font-family: 'League Spartan', sans-serif;
+          background: transparent;
+          border: none;
+          transition: all 0.3s ease;
+          letter-spacing: 0.01em;
+        }
+        
+        .nav-link:hover {
+          background: rgba(0, 26, 110, 0.05);
+          color: #001A6E;
+        }
+        
+        .nav-link.active {
+          background: transparent;
+          color: #001A6E;
+          font-weight: 500;
+        }
+        
+        /* Action Buttons at bottom */
+        .navbar-actions {
+          width: 100%;
+          flex-direction: row;
+          gap: 12px;
+          height: auto;
+          padding: 20px;
+          justify-content: center;
+          align-items: center;
+          border-top: 1px solid rgba(0,0,0,0.1);
+          margin-top: auto;
+        }
+        
+        .btn-grievance {
+          flex: 0 0 auto;
+          width: auto;
+          min-width: 120px;
+          font-size: 14px;
+          padding: 12px 28px;
+          justify-content: center;
+          background: #FFFFFF;
+          border: 1px solid #001A6E;
+          color: #001A6E;
+          border-radius: 30px;
+        }
+        
+        .btn-grievance:hover {
+          background: #001A6E;
+          color: #FFFFFF;
+        }
+        
+        .btn-contact {
+          flex: 0 0 auto;
+          width: auto;
+          min-width: 120px;
+          font-size: 14px;
+          padding: 12px 28px;
+          justify-content: center;
+          background: #89AC46;
+          color: #FFFFFF;
+          border-radius: 30px;
+          border: none;
+        }
+        
+        .btn-contact:hover {
+          background: #74a93d;
+          color: #FFFFFF;
+        }
+        
+        /* Hide desktop hero on mobile */
+        .hero {
+          display: none !important;
+        }
+        
+        /* Show mobile wrapper on mobile */
+        .career-mobile-wrapper {
+          display: flex;
+          padding-top: 80px;
+        }
+        
+        /* Hide other sections on mobile (optional - you can keep them if needed) */
+        .section {
+          display: none;
+        }
+        
+        /* Page content spacing */
+        .page-content {
+          margin-top: 0;
+          padding: 0;
+        }
+    }
+    
+    @media (max-width: 480px){
+        .navbar {
+          padding: 18px 15px 12px 15px;
+          min-height: 70px;
+        }
+        
+        .logo-image {
+          height: 50px;
+        }
+        
+        .mobile-nav-contact {
+          padding: 8px 16px;
+          font-size: 13px;
+        }
+        
+        .navbar-collapse {
+          top: 90px;
+          padding: 15px;
+        }
+        
+        .nav-link {
+          font-size: 14px;
+          padding: 12px 15px;
+        }
+        
+        .btn-grievance, .btn-contact {
+          font-size: 13px;
+          padding: 10px 20px;
+        }
+        
+        /* Mobile career layout adjustments */
+        .career-mobile-wrapper {
+          padding-top: 70px;
+        }
+        
+        .career-mobile-image {
+          padding: 10px;
+        }
+        
+        .career-mobile-form {
+          padding: 25px 15px;
+        }
+        
+        .career-mobile-title {
+          font-size: 24px;
+        }
+        
+        .career-mobile-subtitle {
+          font-size: 13px;
+        }
+        
+        .career-form-input,
+        .career-form-textarea {
+          padding: 12px;
+          font-size: 13px;
+        }
+        
+        .career-upload-text {
+          padding: 12px;
+          font-size: 13px;
+        }
+        
+        .career-upload-btn {
+          padding: 12px 16px;
+          font-size: 13px;
+        }
+        
+        .career-apply-btn {
+          padding: 12px;
+          font-size: 14px;
+        }
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div class="loader loader-2">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div class="loader loader-3">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    (function() {
+      function hidePageLoader() {
+        var loader = document.getElementById('pageLoader');
+        var body = document.body;
+        if (loader) {
+          loader.classList.add('hidden');
+          setTimeout(function() {
+            body.classList.remove('loading');
+            loader.style.display = 'none';
+          }, 500);
+        } else {
+          body.classList.remove('loading');
+        }
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hidePageLoader, 500);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(hidePageLoader, 500);
+        });
+      }
+      setTimeout(hidePageLoader, 3000);
+    })();
+  </script>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="navbar-left">
+      <a class="navbar-brand" href="#">
+        <img src="Images/Logo.png" alt="RDK Global Finance" class="logo-image">
+      </a>
+      <!-- Mobile Contact Button -->
+      <a class="mobile-nav-contact" href="contact.html">Contact</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Mobile Menu Header -->
+      <div class="mobile-menu-header">
+        <a class="mobile-menu-logo" href="#">
+          <img src="Images/Logo.png" alt="RDK Global Finance" class="mobile-logo-image">
+        </a>
+        <button class="mobile-menu-close" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Close navigation">
+          <span class="close-icon">×</span>
+        </button>
+      </div>
+      <!-- Navigation Links -->
+      <div class="navbar-center">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="career.html">Career</a></li>
+        </ul>
+      </div>
+      <!-- Action Buttons -->
+      <div class="navbar-actions">
+        <a class="btn-grievance" href="grievance.html">Grievance</a>
+        <a class="btn-contact" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <div class="page-content">
+    
+    <!-- Mobile Hero Layout (hidden on desktop) -->
+    <div class="career-mobile-wrapper">
+      <div class="career-mobile-image">
+        <img src="Images/logos/Aboutus/About1.png" alt="Join Our Team" class="career-mobile-img">
+      </div>
+      <!-- Mobile Form Section -->
+      <div class="career-mobile-form">
+        <h2 class="career-mobile-title">CAREER</h2>
+        <p class="career-mobile-subtitle">Share your details and our HR team will reach out to you</p>
+        <form class="career-mobile-form-content" id="career-mobile-form">
+          <input type="text" class="career-form-input" name="firstName" placeholder="First Name" required>
+          <input type="text" class="career-form-input" name="lastName" placeholder="Last Name" required>
+          <input type="email" class="career-form-input" name="email" placeholder="Email" required>
+          <input type="tel" class="career-form-input" name="phone" placeholder="Phone Number" required>
+          <select class="career-form-input" name="position" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 14px; color: #000000; box-sizing: border-box; cursor: pointer;">
+            <option value="">Select a position</option>
+            <option value="senior-loan-officer">Senior Loan Officer</option>
+            <option value="customer-service">Customer Service Representative</option>
+            <option value="it-support">IT Support Specialist</option>
+            <option value="marketing-executive">Marketing Executive</option>
+            <option value="other">Other</option>
+          </select>
+          <select class="career-form-input" name="experience" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 14px; color: #000000; box-sizing: border-box; cursor: pointer;">
+            <option value="">Select experience level</option>
+            <option value="0-1">0-1 years</option>
+            <option value="1-3">1-3 years</option>
+            <option value="3-5">3-5 years</option>
+            <option value="5+">5+ years</option>
+          </select>
+          <div class="career-upload-wrapper">
+            <input type="file" id="career-resume-mobile" class="career-file-input" name="resume" accept=".pdf,.doc,.docx" required>
+            <label for="career-resume-mobile" class="career-upload-label">
+              <span class="career-upload-text" id="career-resume-mobile-text">Upload your resume</span>
+              <span class="career-upload-btn">
+                <i class="bi bi-arrow-up"></i> Upload
+              </span>
+            </label>
+          </div>
+          <textarea class="career-form-textarea" name="coverLetter" placeholder="Cover Letter (Tell us why you're interested in this position...)" rows="4"></textarea>
+          <button type="submit" class="career-apply-btn">Apply now</button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- ===== HERO SECTION (Desktop) ===== -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Join Our Team</h1>
+          <p>Be part of a dynamic team that's transforming the financial services landscape. We offer exciting career opportunities for talented individuals who share our vision of making finance accessible to all.</p>
+          <a href="#current-openings" class="hero-button">View Openings</a>
+        </div>
+        <div class="hero-illustration">
+          <img src="Images/hero_section.png" alt="Career at RDK Global Finance" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPANY CULTURE SECTION ===== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Why Work With Us?</h2>
+          <p class="section-description">Discover what makes RDK Global Finance a great place to work.</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-people-fill text-primary mb-3" style="font-size: 3rem;"></i>
+                <h4>Collaborative Environment</h4>
+                <p>Work in a supportive team environment where your ideas are valued and your contributions make a real difference.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-graph-up text-primary mb-3" style="font-size: 3rem;"></i>
+                <h4>Career Growth</h4>
+                <p>We invest in our employees' development through training programs, mentorship, and opportunities for advancement.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-heart-fill text-primary mb-3" style="font-size: 3rem;"></i>
+                <h4>Work-Life Balance</h4>
+                <p>We believe in maintaining a healthy work-life balance with flexible working arrangements and employee wellness programs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CURRENT OPENINGS SECTION ===== -->
+    <section id="current-openings" class="section section-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Current Job Openings</h2>
+          <p class="section-description">Explore exciting career opportunities with RDK Global Finance.</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h4>Senior Loan Officer</h4>
+                  <span class="badge bg-primary">Full-time</span>
+                </div>
+                <p class="text-muted mb-3">Raipur, Chhattisgarh</p>
+                <p>We are looking for an experienced loan officer to join our team. The ideal candidate will have 3+ years of experience in loan processing and customer service.</p>
+                <div class="row">
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Experience:</strong> 3+ years</small>
+                  </div>
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Salary:</strong> Competitive</small>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="#apply-form" class="btn btn-sm">Apply Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h4>Customer Service Representative</h4>
+                  <span class="badge bg-success">Full-time</span>
+                </div>
+                <p class="text-muted mb-3">Raipur, Chhattisgarh</p>
+                <p>Join our customer service team and help customers with their financial needs. Excellent communication skills and customer service experience required.</p>
+                <div class="row">
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Experience:</strong> 1+ years</small>
+                  </div>
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Salary:</strong> Competitive</small>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="#apply-form" class="btn btn-sm">Apply Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h4>IT Support Specialist</h4>
+                  <span class="badge bg-warning">Full-time</span>
+                </div>
+                <p class="text-muted mb-3">Raipur, Chhattisgarh</p>
+                <p>We need a skilled IT professional to maintain our systems and provide technical support to our team. Knowledge of financial systems is a plus.</p>
+                <div class="row">
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Experience:</strong> 2+ years</small>
+                  </div>
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Salary:</strong> Competitive</small>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="#apply-form" class="btn btn-sm">Apply Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h4>Marketing Executive</h4>
+                  <span class="badge bg-info">Full-time</span>
+                </div>
+                <p class="text-muted mb-3">Raipur, Chhattisgarh</p>
+                <p>Help us grow our business through effective marketing strategies. Experience in digital marketing and financial services preferred.</p>
+                <div class="row">
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Experience:</strong> 2+ years</small>
+                  </div>
+                  <div class="col-6">
+                    <small class="text-muted"><strong>Salary:</strong> Competitive</small>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="#apply-form" class="btn btn-sm">Apply Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BENEFITS SECTION ===== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Employee Benefits</h2>
+          <p class="section-description">We offer comprehensive benefits to support our employees' well-being and career growth.</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-currency-rupee text-primary mb-3" style="font-size: 2.5rem;"></i>
+                <h5>Competitive Salary</h5>
+                <p>Attractive compensation packages with performance-based incentives.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-shield-check text-primary mb-3" style="font-size: 2.5rem;"></i>
+                <h5>Health Insurance</h5>
+                <p>Comprehensive health coverage for you and your family.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-book text-primary mb-3" style="font-size: 2.5rem;"></i>
+                <h5>Training & Development</h5>
+                <p>Continuous learning opportunities and skill development programs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="bi bi-calendar-event text-primary mb-3" style="font-size: 2.5rem;"></i>
+                <h5>Flexible Work</h5>
+                <p>Flexible working hours and work-from-home options.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== APPLICATION FORM SECTION ===== -->
+    <section id="apply-form" class="section section-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="text-center mb-4">Apply for a Position</h3>
+                <form id="career-desktop-form">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="firstName" class="form-label">First Name *</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name *</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number *</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="position" class="form-label">Position Applied For *</label>
+                    <select class="form-control" id="position" name="position" required>
+                      <option value="">Select a position</option>
+                      <option value="senior-loan-officer">Senior Loan Officer</option>
+                      <option value="customer-service">Customer Service Representative</option>
+                      <option value="it-support">IT Support Specialist</option>
+                      <option value="marketing-executive">Marketing Executive</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="experience" class="form-label">Years of Experience *</label>
+                    <select class="form-control" id="experience" name="experience" required>
+                      <option value="">Select experience level</option>
+                      <option value="0-1">0-1 years</option>
+                      <option value="1-3">1-3 years</option>
+                      <option value="3-5">3-5 years</option>
+                      <option value="5+">5+ years</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="coverLetter" class="form-label">Cover Letter</label>
+                    <textarea class="form-control" id="coverLetter" name="coverLetter" rows="4" placeholder="Tell us why you're interested in this position and what you can bring to our team..."></textarea>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="resume" class="form-label">Resume/CV *</label>
+                    <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    <small class="form-text text-muted">Please upload your resume in PDF or Word format. Maximum file size: 5MB.</small>
+                  </div>
+                  
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                    <label class="form-check-label" for="termsAgreement">
+                      I agree to the <a href="#" class="text-primary">Terms and Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a> *
+                    </label>
+                  </div>
+                  
+                  <div class="text-center">
+                    <button type="submit" class="btn">Submit Application</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-column footer-logo-column">
+          <div class="footer-logo">
+            <img src="Images/blackLogo.png" alt="RDK Global Finance" class="footer-logo-image">
+          </div>
+          <p class="company-name">RDK Global Finance Limited</p>
+          <p class="company-address">First floor, Jaggi Complex, Infront of Police Line, Nehru Nagar, Raipur, (C.G) 492001</p>
+          <p class="company-phone">+91-9109171311</p>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Company</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="regulatory.html#rbi">RBI Disclaimer</a></li>
+            <li><a href="regulatory.html">Regulatory</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Information</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="grievance.html">Grievance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Social</h5>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 RDK Global Finance Private Limited.</p>
+        <p class="designer">Designed by Lexicon Digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/common.js"></script>
+  
+  <script>
+    // Mobile menu body scroll lock and hide navbar-left
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const navbarLeft = document.querySelector('.navbar-left');
+    
+    if (navbarCollapse && navbarLeft) {
+      // Initial state - ensure navbar-left is visible when menu is closed
+      if (window.innerWidth <= 991.98 && !navbarCollapse.classList.contains('show')) {
+        navbarLeft.style.display = 'flex';
+      }
+      
+      navbarCollapse.addEventListener('show.bs.collapse', function() {
+        document.body.style.overflow = 'hidden';
+        // Hide navbar-left (logo and hamburger) when menu opens
+        if (window.innerWidth <= 991.98) {
+          navbarLeft.style.display = 'none';
+        }
+      });
+      
+      navbarCollapse.addEventListener('hide.bs.collapse', function() {
+        document.body.style.overflow = '';
+        // Show navbar-left when menu closes
+        if (window.innerWidth <= 991.98) {
+          navbarLeft.style.display = 'flex';
+        }
+      });
+      
+      // Close menu when clicking nav links on mobile
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          // Close menu on mobile devices
+          if (window.innerWidth <= 991.98 && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+            // Restore body scroll
+            document.body.style.overflow = '';
+          }
+        });
+      });
+      
+      // Close menu when clicking close button
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+          }
+        });
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 991.98) {
+          // On desktop, ensure navbar-left is visible
+          navbarLeft.style.display = '';
+        } else {
+          // On mobile, show/hide based on menu state
+          if (navbarCollapse.classList.contains('show')) {
+            navbarLeft.style.display = 'none';
+          } else {
+            navbarLeft.style.display = 'flex';
+          }
+        }
+      });
+    }
+
+    // ===== FIREBASE FORM SUBMISSION HANDLERS =====
+    
+    // Update resume filename display for mobile form
+    document.getElementById('career-resume-mobile')?.addEventListener('change', function(e) {
+      const fileName = e.target.files[0]?.name || 'Upload your resume';
+      const textElement = document.getElementById('career-resume-mobile-text');
+      if (textElement) {
+        textElement.textContent = fileName;
+      }
+    });
+
+    // Function to upload file to Firebase Storage
+    async function uploadFileToStorage(file, folder) {
+      if (!file) return null;
+      
+      // Get storage from window (set by firebase-config.js) or use global
+      const storageInstance = window.storage || storage;
+      if (!storageInstance) {
+        throw new Error('Firebase Storage is not initialized. Please refresh the page.');
+      }
+      
+      const fileName = `${folder}/${Date.now()}_${file.name}`;
+      const storageRef = storageInstance.ref(fileName);
+      
+      try {
+        const snapshot = await storageRef.put(file);
+        const downloadURL = await snapshot.ref.getDownloadURL();
+        return downloadURL;
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        throw error;
+      }
+    }
+
+    // Function to show success/error message
+    function showMessage(message, type = 'success') {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
+      messageDiv.style.cssText = 'position: fixed; top: 150px; left: 50%; transform: translateX(-50%); z-index: 9999; max-width: 500px;';
+      messageDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      `;
+      document.body.appendChild(messageDiv);
+      
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    }
+
+    // Handle mobile form submission
+    const mobileForm = document.getElementById('career-mobile-form');
+    if (mobileForm) {
+      mobileForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('.career-apply-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        
+        try {
+          const formData = new FormData(this);
+          const resumeFile = document.getElementById('career-resume-mobile').files[0];
+          
+          // Upload resume file (non-blocking - save form data even if upload fails)
+          let resumeURL = null;
+          let resumeFileName = null;
+          let resumeFilePath = null;
+          let resumeFileSize = null;
+          
+          if (resumeFile) {
+            try {
+              resumeFileName = resumeFile.name;
+              resumeFileSize = resumeFile.size;
+              resumeFilePath = `career-resumes/${Date.now()}_${resumeFile.name}`;
+              
+              resumeURL = await uploadFileToStorage(resumeFile, 'career-resumes');
+              console.log('✅ File uploaded successfully!');
+              console.log('📄 File Name:', resumeFileName);
+              console.log('📦 File Size:', (resumeFileSize / 1024).toFixed(2), 'KB');
+              console.log('📁 Storage Path:', resumeFilePath);
+              console.log('🔗 Download URL:', resumeURL);
+            } catch (uploadError) {
+              console.warn('⚠️ File upload failed, but saving form data anyway:', uploadError);
+              // Continue with form submission even if file upload fails
+            }
+          }
+          
+          // Get form values - use FormData, fallback to direct input access
+          const getFieldValue = (name) => {
+            const formDataValue = formData.get(name);
+            if (formDataValue !== null && formDataValue !== undefined && formDataValue !== '') {
+              return formDataValue;
+            }
+            // Fallback: read directly from input
+            const input = this.querySelector(`[name="${name}"]`);
+            return input ? input.value : '';
+          };
+          
+          // Prepare data for Firestore
+          const careerData = {
+            firstName: getFieldValue('firstName') || '',
+            lastName: getFieldValue('lastName') || '',
+            email: getFieldValue('email') || '',
+            phone: getFieldValue('phone') || '',
+            position: getFieldValue('position') || '',
+            experience: getFieldValue('experience') || '',
+            coverLetter: getFieldValue('coverLetter') || '',
+            // File information for easy viewing in Firestore
+            resumeURL: resumeURL, // Direct download link (clickable in Firestore)
+            resumeFileName: resumeFileName, // Original file name
+            resumeFilePath: resumeFilePath, // Storage path (career-resumes/timestamp_filename.pdf)
+            resumeFileSize: resumeFileSize, // File size in bytes
+            formType: 'mobile',
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'pending'
+          };
+          
+          // Debug: Log the data being saved
+          console.log('📝 Form Data Being Saved:', careerData);
+          console.log('📋 Raw FormData values:', {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            position: formData.get('position'),
+            experience: formData.get('experience'),
+            coverLetter: formData.get('coverLetter')
+          });
+          console.log('📋 Direct input values:', {
+            firstName: this.querySelector('[name="firstName"]')?.value,
+            lastName: this.querySelector('[name="lastName"]')?.value,
+            email: this.querySelector('[name="email"]')?.value,
+            phone: this.querySelector('[name="phone"]')?.value,
+            position: this.querySelector('[name="position"]')?.value,
+            experience: this.querySelector('[name="experience"]')?.value,
+            coverLetter: this.querySelector('[name="coverLetter"]')?.value
+          });
+          
+          // Save to Firestore - use global db from firebase-config.js
+          const dbInstance = window.db || db;
+          if (!dbInstance) {
+            throw new Error('Firestore is not initialized. Please refresh the page.');
+          }
+          const docRef = await dbInstance.collection('career-applications').add(careerData);
+          console.log('✅ Data saved to Firestore successfully! Document ID:', docRef.id);
+          
+          // Log file mapping confirmation
+          if (resumeURL) {
+            console.log('📎 File mapped to form data:');
+            console.log('   - Document ID:', docRef.id);
+            console.log('   - File Name:', resumeFileName);
+            console.log('   - File URL:', resumeURL);
+            console.log('   - View in Firestore: career-applications →', docRef.id);
+          }
+          
+          showMessage('Application submitted successfully! Our HR team will reach out to you soon.', 'success');
+          this.reset();
+          document.getElementById('career-resume-mobile-text').textContent = 'Upload your resume';
+          
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          showMessage('Failed to submit application. Please try again.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+
+    // Handle desktop form submission
+    const desktopForm = document.getElementById('career-desktop-form');
+    if (desktopForm) {
+      desktopForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        
+        try {
+          const formData = new FormData(this);
+          const resumeFile = document.getElementById('resume').files[0];
+          
+          // Upload resume file (non-blocking - save form data even if upload fails)
+          let resumeURL = null;
+          let resumeFileName = null;
+          let resumeFilePath = null;
+          let resumeFileSize = null;
+          
+          if (resumeFile) {
+            try {
+              resumeFileName = resumeFile.name;
+              resumeFileSize = resumeFile.size;
+              resumeFilePath = `career-resumes/${Date.now()}_${resumeFile.name}`;
+              
+              resumeURL = await uploadFileToStorage(resumeFile, 'career-resumes');
+              console.log('✅ File uploaded successfully!');
+              console.log('📄 File Name:', resumeFileName);
+              console.log('📦 File Size:', (resumeFileSize / 1024).toFixed(2), 'KB');
+              console.log('📁 Storage Path:', resumeFilePath);
+              console.log('🔗 Download URL:', resumeURL);
+            } catch (uploadError) {
+              console.warn('⚠️ File upload failed, but saving form data anyway:', uploadError);
+              // Continue with form submission even if file upload fails
+            }
+          }
+          
+          // Get form values - use FormData, fallback to direct input access
+          const getFieldValue = (name) => {
+            const formDataValue = formData.get(name);
+            if (formDataValue !== null && formDataValue !== undefined && formDataValue !== '') {
+              return formDataValue;
+            }
+            // Fallback: read directly from input
+            const input = this.querySelector(`[name="${name}"]`);
+            return input ? input.value : '';
+          };
+          
+          // Prepare data for Firestore
+          const careerData = {
+            firstName: getFieldValue('firstName') || '',
+            lastName: getFieldValue('lastName') || '',
+            email: getFieldValue('email') || '',
+            phone: getFieldValue('phone') || '',
+            position: getFieldValue('position') || '',
+            experience: getFieldValue('experience') || '',
+            coverLetter: getFieldValue('coverLetter') || '',
+            // File information for easy viewing in Firestore
+            resumeURL: resumeURL, // Direct download link (clickable in Firestore)
+            resumeFileName: resumeFileName, // Original file name
+            resumeFilePath: resumeFilePath, // Storage path (career-resumes/timestamp_filename.pdf)
+            resumeFileSize: resumeFileSize, // File size in bytes
+            formType: 'desktop',
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'pending'
+          };
+          
+          // Debug: Log the data being saved
+          console.log('📝 Form Data Being Saved:', careerData);
+          console.log('📋 Raw FormData values:', {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            position: formData.get('position'),
+            experience: formData.get('experience'),
+            coverLetter: formData.get('coverLetter')
+          });
+          console.log('📋 Direct input values:', {
+            firstName: this.querySelector('[name="firstName"]')?.value,
+            lastName: this.querySelector('[name="lastName"]')?.value,
+            email: this.querySelector('[name="email"]')?.value,
+            phone: this.querySelector('[name="phone"]')?.value,
+            position: this.querySelector('[name="position"]')?.value,
+            experience: this.querySelector('[name="experience"]')?.value,
+            coverLetter: this.querySelector('[name="coverLetter"]')?.value
+          });
+          
+          // Save to Firestore - use global db from firebase-config.js
+          const dbInstance = window.db || db;
+          if (!dbInstance) {
+            throw new Error('Firestore is not initialized. Please refresh the page.');
+          }
+          const docRef = await dbInstance.collection('career-applications').add(careerData);
+          console.log('✅ Data saved to Firestore successfully! Document ID:', docRef.id);
+          
+          // Log file mapping confirmation
+          if (resumeURL) {
+            console.log('📎 File mapped to form data:');
+            console.log('   - Document ID:', docRef.id);
+            console.log('   - File Name:', resumeFileName);
+            console.log('   - File URL:', resumeURL);
+            console.log('   - View in Firestore: career-applications →', docRef.id);
+          }
+          
+          showMessage('Application submitted successfully! Our HR team will reach out to you soon.', 'success');
+          this.reset();
+          
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          showMessage('Failed to submit application. Please try again.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - RDK Global Finance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#052169; /* deep navy */
+      --accent:#21c55d; /* green */
+      --ink:#0f172a;
+      --muted:#475569;
+      --light-blue:#f0f9ff;
+      --hero-bg:#e0f2fe;
+    }
+    body{font-family:'League Spartan',sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--light-blue),#f2f7ff);overflow-x:hidden;margin:0;padding:0}
+    
+    /* Smooth scrolling */
+    html{scroll-behavior:smooth;margin:0;padding:0}
+    
+    /* ===== PAGE LOADER ===== */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+      overflow: hidden;
+      background-image: none !important;
+      background-color: #FFFFFF !important;
+    }
+    
+    progress, 
+    ::-webkit-progress-bar, 
+    ::-moz-progress-bar,
+    .progress,
+    .loading-bar,
+    [class*="progress"],
+    [class*="loading-bar"],
+    [id*="progress"],
+    [id*="loading-bar"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+    
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    /* Rollercoaster Loader */
+    .loader-wrapper {
+      position: fixed;
+      z-index: 99999;
+      height: 2em;
+      width: 2em;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    
+    .loader-wrapper:before {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+    }
+    
+    .loader-wrapper .loader {
+      width: 148px;
+      height: 100px;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    
+    .loader-wrapper .loader:after {
+      content: "";
+      top: auto;
+      position: absolute;
+      display: block;
+      animation: shadow 1.2s infinite linear;
+      -moz-animation: shadow 1.2s infinite linear;
+      -webkit-animation: shadow 1.2s infinite linear;
+      bottom: 0em;
+      left: 0;
+      height: 0.25em;
+      width: 1em;
+      border-radius: 50%;
+      background-color: #001A6E;
+      opacity: 0.3;
+    }
+    
+    .loader-wrapper .loader .roller,
+    .loader-wrapper .loader .roller:last-child {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: rollercoaster 1.2s infinite linear;
+      -webkit-transform: rotate(135deg);
+      -moz-animation: rollercoaster 1.2s infinite linear;
+      -moz-transform: rotate(135deg);
+      animation: rollercoaster 1.2s infinite linear;
+      transform: rotate(135deg);
+    }
+    
+    .loader-wrapper .loader .roller:last-child {
+      left: auto;
+      right: 0;
+      -webkit-transform: rotate(-45deg);
+      -webkit-animation: rollercoaster2 1.2s infinite linear;
+      -moz-transform: rotate(-45deg);
+      -moz-animation: rollercoaster2 1.2s infinite linear;
+      transform: rotate(-45deg);
+      animation: rollercoaster2 1.2s infinite linear;
+    }
+    
+    .loader-wrapper .loader .roller:before,
+    .loader-wrapper .loader .roller:last-child:before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: #001A6E;
+      border-radius: 50%;
+    }
+    
+    .loader-wrapper .loader.loader-2:after {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+    
+    .loader-wrapper .loader.loader-2 .roller {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+    
+    .loader-wrapper .loader.loader-3:after {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    
+    .loader-wrapper .loader.loader-3 .roller {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    
+    @-webkit-keyframes rollercoaster {
+      0% { -webkit-transform: rotate(135deg); }
+      8% { -webkit-transform: rotate(240deg); }
+      20% { -webkit-transform: rotate(300deg); }
+      40% { -webkit-transform: rotate(380deg); }
+      45% { -webkit-transform: rotate(440deg); }
+      50% { -webkit-transform: rotate(495deg); opacity: 1; }
+      50.1% { -webkit-transform: rotate(495deg); opacity: 0; }
+      100% { -webkit-transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @-webkit-keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; -webkit-transform: rotate(-45deg); }
+      58% { -webkit-transform: rotate(-160deg); }
+      70% { -webkit-transform: rotate(-240deg); }
+      80% { -webkit-transform: rotate(-300deg); }
+      90% { -webkit-transform: rotate(-340deg); }
+      100% { -webkit-transform: rotate(-405deg); }
+    }
+    
+    @-webkit-keyframes shadow {
+      0% { opacity: 0.3; -webkit-transform: translateX(65px) scale(0.5, 0.5); }
+      8% { -webkit-transform: translateX(30px) scale(2, 2); }
+      13% { -webkit-transform: translateX(0px) scale(1.3, 1.3); }
+      30% { -webkit-transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { -webkit-transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { -webkit-transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { -webkit-transform: translateX(145px) scale(1.2, 1.2); }
+      80% { -webkit-transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { -webkit-transform: translateX(80px) scale(0.8, 0.8); }
+      100% { -webkit-transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    @-moz-keyframes rollercoaster {
+      0% { -moz-transform: rotate(135deg); }
+      8% { -moz-transform: rotate(240deg); }
+      20% { -moz-transform: rotate(300deg); }
+      40% { -moz-transform: rotate(380deg); }
+      45% { -moz-transform: rotate(440deg); }
+      50% { -moz-transform: rotate(495deg); opacity: 1; }
+      50.1% { -moz-transform: rotate(495deg); opacity: 0; }
+      100% { -moz-transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @-moz-keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; -moz-transform: rotate(-45deg); }
+      58% { -moz-transform: rotate(-160deg); }
+      70% { -moz-transform: rotate(-240deg); }
+      80% { -moz-transform: rotate(-300deg); }
+      90% { -moz-transform: rotate(-340deg); }
+      100% { -moz-transform: rotate(-405deg); }
+    }
+    
+    @-moz-keyframes shadow {
+      0% { opacity: 0.3; -moz-transform: translateX(65px) scale(0.5, 0.5); }
+      8% { -moz-transform: translateX(30px) scale(2, 2); }
+      13% { -moz-transform: translateX(0px) scale(1.3, 1.3); }
+      30% { -moz-transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { -moz-transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { -moz-transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { -moz-transform: translateX(145px) scale(1.2, 1.2); }
+      80% { -moz-transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { -moz-transform: translateX(80px) scale(0.8, 0.8); }
+      100% { -moz-transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    @keyframes rollercoaster {
+      0% { transform: rotate(135deg); }
+      8% { transform: rotate(240deg); }
+      20% { transform: rotate(300deg); }
+      40% { transform: rotate(380deg); }
+      45% { transform: rotate(440deg); }
+      50% { transform: rotate(495deg); opacity: 1; }
+      50.1% { transform: rotate(495deg); opacity: 0; }
+      100% { transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; transform: rotate(-45deg); }
+      58% { transform: rotate(-160deg); }
+      70% { transform: rotate(-240deg); }
+      80% { transform: rotate(-300deg); }
+      90% { transform: rotate(-340deg); }
+      100% { transform: rotate(-405deg); }
+    }
+    
+    @keyframes shadow {
+      0% { opacity: 0.3; transform: translateX(65px) scale(0.5, 0.5); }
+      8% { transform: translateX(30px) scale(2, 2); }
+      13% { transform: translateX(0px) scale(1.3, 1.3); }
+      30% { transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { transform: translateX(145px) scale(1.2, 1.2); }
+      80% { transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { transform: translateX(80px) scale(0.8, 0.8); }
+      100% { transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    body.loading {
+      overflow: hidden;
+    }
+
+    /* ===== NAVBAR (Desktop Design) ===== */
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px 40px 60px;
+      isolation: isolate;
+      position: fixed;
+      width: 100%;
+      height: 124px;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #F1F7FF;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Hamburger menu button - hidden on desktop */
+    .navbar-toggler {
+      display: none;
+      border: none;
+      padding: 4px 8px;
+      background: transparent;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    /* Mobile Contact Button - Hidden on desktop */
+    .mobile-nav-contact {
+      display: none;
+    }
+    
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 30px;
+      height: 3px;
+      background: #001A6E;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background: #001A6E;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler-icon::before {
+      top: -10px;
+    }
+    
+    .navbar-toggler-icon::after {
+      bottom: -10px;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background: transparent;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--brand);
+      width: 136px;
+      height: 100px;
+      z-index: 0;
+    }
+    
+    .logo-image {
+      height: 100px;
+      width: 136px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .navbar-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .navbar-center {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+    
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      width: 452px;
+      height: 64px;
+      z-index: 2;
+      background: #FFFFFF;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0px;
+      gap: 10px;
+      width: 113px;
+      height: 64px;
+      background: transparent;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: 0.02em;
+      color: #001A6E;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .nav-link:first-child {
+      border-radius: 15px 0px 0px 15px;
+    }
+    
+    .nav-link:last-child {
+      border-radius: 0px 15px 15px 0px;
+    }
+    
+    .nav-link:hover {
+      background: #cfe0ff;
+      color: #001A6E;
+    }
+
+    .nav-link.active {
+      background: #cfe0ff;
+      color: #001A6E;
+      font-weight: 500;
+    }
+
+    /* Desktop-only: force middle items (Services, About us) to be square */
+    @media (min-width: 992px) {
+      .navbar-nav .nav-item:not(:first-child):not(:last-child) .nav-link {
+        border-radius: 0px 0px 0px 0px;
+      }
+      /* Ensure Home keeps rounded left corners on hover/active */
+      .navbar-nav .nav-item:first-child .nav-link:hover,
+      .navbar-nav .nav-item:first-child .nav-link.active {
+        border-radius: 15px 0px 0px 15px;
+      }
+    }
+    
+    .navbar-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0px;
+      gap: 16px;
+      width: 223px;
+      height: 64px;
+      z-index: 3;
+      flex-shrink: 0;
+    }
+    
+    .btn-grievance {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      width: 111px;
+      height: 34px;
+      border: 1px solid #001A6E;
+      border-radius: 37px;
+      background: #FFFFFF;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: #001A6E;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-grievance:hover {
+      background: #001A6E;
+      color: #FFFFFF;
+    }
+    
+    .btn-contact {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      width: 96px;
+      height: 34px;
+      background: #89AC46;
+      border-radius: 30px;
+      border: none;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-contact:hover {
+      background: #74a93d;
+      color: #FFFFFF;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1200px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+    }
+    
+    /* Desktop: Ensure navbar-collapse is always visible */
+    @media (min-width: 992px) {
+      .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .navbar-toggler {
+        display: none !important;
+      }
+      
+      .navbar-left {
+        flex-shrink: 0;
+      }
+      
+      /* Hide mobile menu header on desktop */
+      .mobile-menu-header {
+        display: none !important;
+      }
+      
+      /* Hide mobile contact button on desktop */
+      .mobile-nav-contact {
+        display: none !important;
+      }
+    }
+    
+    @media (max-width: 991.98px){
+        /* Show hamburger button on mobile */
+        .navbar-toggler {
+          display: block;
+          margin-left: 0;
+          z-index: 1001;
+          flex-shrink: 0;
+        }
+        
+        .navbar {
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 20px 20px 15px 20px;
+          height: auto;
+          min-height: 80px;
+        }
+        
+        .navbar-left {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 15px;
+        }
+        
+        .navbar-brand {
+          margin-bottom: 0;
+          flex-shrink: 0;
+        }
+        
+        .logo-image {
+          height: 60px;
+          width: auto;
+        }
+        
+        /* Mobile Contact Button */
+        .mobile-nav-contact {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background: #89AC46;
+          color: #FFFFFF;
+          text-decoration: none;
+          border-radius: 30px;
+          font-family: 'League Spartan', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: 0.02em;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+          flex-shrink: 0;
+          margin-left: auto;
+        }
+        
+        .mobile-nav-contact:hover {
+          background: #74a93d;
+          color: #FFFFFF;
+        }
+        
+        /* Collapsed menu styling - Full screen overlay */
+        .navbar-collapse {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #F1F7FF;
+          padding: 0;
+          box-shadow: none;
+          z-index: 1050;
+          overflow-y: auto;
+          flex-direction: column;
+        }
+        
+        /* Mobile Menu Header */
+        .mobile-menu-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          width: 100%;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .mobile-menu-logo {
+          display: flex;
+          align-items: center;
+        }
+        
+        .mobile-logo-image {
+          height: 50px;
+          width: auto;
+        }
+        
+        .mobile-menu-close {
+          background: #000000;
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          padding: 0;
+          transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-close:hover {
+          background: #333333;
+          transform: scale(1.1);
+        }
+        
+        .close-icon {
+          color: #FFFFFF;
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 1;
+        }
+        
+        .navbar-center {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          background: #FFFFFF;
+        }
+        
+        .navbar-nav {
+          width: 100%;
+          flex-direction: column;
+          background: #FFFFFF;
+          border-radius: 0;
+          box-shadow: none;
+          height: auto;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .nav-item:last-child {
+          border-bottom: none;
+        }
+        
+        .nav-link {
+          width: 100%;
+          padding: 18px 20px;
+          border-radius: 0;
+          margin: 0;
+          text-align: left;
+          font-size: 17px;
+          font-weight: 400;
+          color: #001A6E;
+          font-family: 'League Spartan', sans-serif;
+          background: transparent;
+          border: none;
+          transition: all 0.3s ease;
+          letter-spacing: 0.01em;
+        }
+        
+        .nav-link:hover {
+          background: #cfe0ff;
+          color: #001A6E;
+        }
+        
+        .nav-link.active {
+          background: #cfe0ff;
+          color: #001A6E;
+          font-weight: 500;
+        }
+        
+        /* Action Buttons at bottom */
+        .navbar-actions {
+          width: 100%;
+          flex-direction: row;
+          gap: 12px;
+          height: auto;
+          padding: 20px;
+          justify-content: center;
+          align-items: center;
+          border-top: 1px solid rgba(0,0,0,0.1);
+          margin-top: auto;
+        }
+        
+        .btn-grievance {
+          flex: 0 0 auto;
+          width: auto;
+          min-width: 120px;
+          font-size: 14px;
+          padding: 12px 28px;
+          justify-content: center;
+          background: #FFFFFF;
+          border: 1px solid #001A6E;
+          color: #001A6E;
+          border-radius: 30px;
+        }
+        
+        .btn-grievance:hover {
+          background: #001A6E;
+          color: #FFFFFF;
+        }
+        
+        .btn-contact {
+          flex: 0 0 auto;
+          width: auto;
+          min-width: 120px;
+          font-size: 14px;
+          padding: 12px 28px;
+          justify-content: center;
+          background: #89AC46;
+          color: #FFFFFF;
+          border-radius: 30px;
+          border: none;
+        }
+        
+        .btn-contact:hover {
+          background: #74a93d;
+          color: #FFFFFF;
+        }
+    }
+    
+    @media (max-width: 991.98px) {
+      /* Page content spacing for mobile navbar */
+      .page-content {
+        margin-top: 80px;
+      }
+      
+      /* Contact Section Mobile Layout */
+      .section {
+        padding: 40px 0 !important;
+      }
+      
+      .section .row {
+        flex-direction: column;
+        margin: 0;
+      }
+      
+      .section .container {
+        padding: 0 15px;
+      }
+      
+      .section .col-md-6 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+      }
+      
+      .section .col-md-6:first-child {
+        order: 1;
+      }
+      
+      .section .col-md-6:last-child {
+        order: 2;
+      }
+      
+      /* Contact Information Card - Mobile Styling (like hero image) */
+      .section .col-md-6:first-child > div {
+        border-radius: 20px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
+      }
+      
+      /* Contact Form - Mobile Styling */
+      .section .col-md-6:last-child > div {
+        padding: 30px 20px !important;
+        background: #FFFFFF;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      
+      .section .col-md-6:last-child h2 {
+        font-size: 2rem !important;
+      }
+      
+      .section .col-md-6:last-child p {
+        font-size: 0.95rem !important;
+      }
+    }
+    
+    @media (max-width: 480px){
+        .navbar {
+          padding: 18px 15px 12px 15px;
+          min-height: 70px;
+        }
+        
+        .logo-image {
+          height: 50px;
+        }
+        
+        .mobile-nav-contact {
+          padding: 8px 16px;
+          font-size: 13px;
+        }
+        
+        .navbar-collapse {
+          top: 90px;
+          padding: 15px;
+        }
+        
+        .nav-link {
+          font-size: 14px;
+          padding: 12px 15px;
+        }
+        
+        .btn-grievance, .btn-contact {
+          font-size: 13px;
+          padding: 10px 20px;
+        }
+        
+        /* Contact Section - Smaller screens */
+        .page-content {
+          margin-top: 70px;
+        }
+        
+        .section {
+          padding: 30px 0 !important;
+        }
+        
+        .section .container {
+          padding: 0 15px;
+        }
+        
+        .section .col-md-6:first-child > div {
+          padding: 25px 20px !important;
+        }
+        
+        .section .col-md-6:first-child h4 {
+          font-size: 1rem !important;
+          margin-bottom: 12px !important;
+        }
+        
+        .section .col-md-6:first-child p {
+          font-size: 0.85rem !important;
+          margin-bottom: 8px !important;
+        }
+        
+        .section .col-md-6:last-child > div {
+          padding: 25px 15px !important;
+        }
+        
+        .section .col-md-6:last-child h2 {
+          font-size: 1.5rem !important;
+          margin-bottom: 8px !important;
+        }
+        
+        .section .col-md-6:last-child p {
+          font-size: 0.9rem !important;
+          margin-bottom: 20px !important;
+        }
+        
+        .section .col-md-6:last-child .form-control {
+          padding: 12px !important;
+          font-size: 0.9rem !important;
+        }
+        
+        .section .col-md-6:last-child button {
+          padding: 12px 30px !important;
+          font-size: 1rem !important;
+        }
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div class="loader loader-2">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div class="loader loader-3">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    (function() {
+      function hidePageLoader() {
+        var loader = document.getElementById('pageLoader');
+        var body = document.body;
+        if (loader) {
+          loader.classList.add('hidden');
+          setTimeout(function() {
+            body.classList.remove('loading');
+            loader.style.display = 'none';
+          }, 500);
+        } else {
+          body.classList.remove('loading');
+        }
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hidePageLoader, 500);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(hidePageLoader, 500);
+        });
+      }
+      setTimeout(hidePageLoader, 3000);
+    })();
+  </script>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="navbar-left">
+      <a class="navbar-brand" href="#">
+        <img src="Images/Logo.png" alt="RDK Global Finance" class="logo-image">
+      </a>
+      <!-- Mobile Contact Button -->
+      <a class="mobile-nav-contact" href="contact.html">Contact</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Mobile Menu Header -->
+      <div class="mobile-menu-header">
+        <a class="mobile-menu-logo" href="#">
+          <img src="Images/Logo.png" alt="RDK Global Finance" class="mobile-logo-image">
+        </a>
+        <button class="mobile-menu-close" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Close navigation">
+          <span class="close-icon">×</span>
+        </button>
+      </div>
+      <!-- Navigation Links -->
+      <div class="navbar-center">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+        </ul>
+      </div>
+      <!-- Action Buttons -->
+      <div class="navbar-actions">
+        <a class="btn-grievance" href="grievance.html">Grievance</a>
+        <a class="btn-contact active" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <div class="page-content">
+    
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section" style="background: #F0F9FF; padding: 80px 0;">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side - Contact Information Card -->
+          <div class="col-md-6">
+            <div style="background: #052169; border-radius: 20px; padding: 50px 40px; color: #FFFFFF;">
+              <div style="margin-bottom: 30px;">
+                <h4 style="font-family: 'League Spartan', sans-serif; font-size: 1.2rem; font-weight: 600; color: #FFFFFF; margin-bottom: 15px;">LOCATION</h4>
+                <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin: 0;">First floor, Jaggi Complex, Infront of Police Line, Nehru Nagar, Raipur, (C.G) 492001</p>
+              </div>
+              
+              <div style="margin-bottom: 30px;">
+                <h4 style="font-family: 'League Spartan', sans-serif; font-size: 1.2rem; font-weight: 600; color: #FFFFFF; margin-bottom: 15px;">WORKING HOURS</h4>
+                <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin: 0;">Monday To Friday</p>
+                <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin: 0;">9:00 AM to 8:00 PM</p>
+                <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin: 0;">Our Support Team is available 24Hrs</p>
+              </div>
+              
+              <div style="margin-bottom: 30px;">
+                <h4 style="font-family: 'League Spartan', sans-serif; font-size: 1.2rem; font-weight: 600; color: #FFFFFF; margin-bottom: 15px;">CONTACT US</h4>
+                <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin: 0;">+91-9109171311</p>
+                <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin: 0;">info@rdkglobalfinance.com</p>
+              </div>
+              
+              <!-- Social Media Icons -->
+              <div class="d-flex gap-3">
+                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #052169; border: 2px solid #FFFFFF; border-radius: 50%; color: #FFFFFF; text-decoration: none; font-family: 'League Spartan', sans-serif; font-weight: 600; font-size: 1.2rem;">X</a>
+                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #052169; border: 2px solid #FFFFFF; border-radius: 50%; color: #FFFFFF; text-decoration: none; font-family: 'League Spartan', sans-serif; font-weight: 600; font-size: 1.2rem;">o</a>
+                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #052169; border: 2px solid #FFFFFF; border-radius: 50%; color: #FFFFFF; text-decoration: none; font-family: 'League Spartan', sans-serif; font-weight: 600; font-size: 1.2rem;">f</a>
+                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #052169; border: 2px solid #FFFFFF; border-radius: 50%; color: #FFFFFF; text-decoration: none; font-family: 'League Spartan', sans-serif; font-weight: 600; font-size: 1.2rem;">in</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Side - Contact Form -->
+          <div class="col-md-6">
+            <div style="padding: 40px;">
+              <h2 style="font-family: 'League Spartan', sans-serif; font-size: 2.5rem; font-weight: 700; color: #89AC46; margin-bottom: 10px;">CONTACT</h2>
+              <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #FFFFFF; line-height: 1.6; margin-bottom: 30px;">Fill up the Form and our team will get back to within 24 hrs</p>
+              
+              <form id="contact-form">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Name" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 1rem;">
+                </div>
+                
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 1rem;">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="Contact" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 1rem;">
+                  </div>
+                </div>
+                
+                <div class="mb-3">
+                  <select class="form-control" id="service" name="service" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 1rem;">
+                    <option value="">Select service</option>
+                    <option value="two-wheeler-loan">Two Wheeler Loan</option>
+                    <option value="vehicle-refinance">Vehicle Refinance</option>
+                    <option value="business-loan">Business Loan</option>
+                    <option value="general-inquiry">General Inquiry</option>
+                    <option value="customer-support">Customer Support</option>
+                  </select>
+                </div>
+                
+                <div class="mb-4">
+                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Message" required style="background: #FFFFFF; border: none; border-radius: 10px; padding: 15px; font-family: 'League Spartan', sans-serif; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+                
+                <div class="text-center">
+                  <button type="submit" style="background: #89AC46; border: none; border-radius: 10px; padding: 15px 40px; color: #FFFFFF; font-family: 'League Spartan', sans-serif; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FULL PAGE MAP SECTION ===== -->
+    <section class="section" style="background: #000000; padding: 0; margin: 0;">
+      <div style="width: 100%; height: 100vh; position: relative;">
+        <!-- Full Page Google Maps -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.1234567890!2d81.6296!3d21.2514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dda239d8b0e9%3A0x1234567890abcdef!2sNehru%20Nagar%2C%20Raipur%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        
+        <!-- Minimal Location Overlay -->
+        <div style="position: absolute; top: 30px; left: 30px; background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); z-index: 10;">
+          <h4 style="font-family: 'League Spartan', sans-serif; font-size: 1.2rem; font-weight: 700; color: #052169; margin: 0 0 5px 0;">RDK Global Finance</h4>
+          <p style="font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 400; color: #7F7F7F; margin: 0;">Nehru Nagar, Raipur, Chhattisgarh</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-column footer-logo-column">
+          <div class="footer-logo">
+            <img src="Images/blackLogo.png" alt="RDK Global Finance" class="footer-logo-image">
+          </div>
+          <p class="company-name">RDK Global Finance Limited</p>
+          <p class="company-address">First floor, Jaggi Complex, Infront of Police Line, Nehru Nagar, Raipur, (C.G) 492001</p>
+          <p class="company-phone">+91-9109171311</p>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Company</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="regulatory.html#rbi">RBI Disclaimer</a></li>
+            <li><a href="regulatory.html">Regulatory</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Information</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="grievance.html">Grievance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Social</h5>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 RDK Global Finance Private Limited.</p>
+        <p class="designer">Designed by Lexicon Digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/common.js"></script>
+  
+  <script>
+    // Mobile menu body scroll lock and hide navbar-left
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const navbarLeft = document.querySelector('.navbar-left');
+    
+    if (navbarCollapse && navbarLeft) {
+      // Initial state - ensure navbar-left is visible when menu is closed
+      if (window.innerWidth <= 991.98 && !navbarCollapse.classList.contains('show')) {
+        navbarLeft.style.display = 'flex';
+      }
+      
+      navbarCollapse.addEventListener('show.bs.collapse', function() {
+        document.body.style.overflow = 'hidden';
+        // Hide navbar-left (logo and hamburger) when menu opens
+        if (window.innerWidth <= 991.98) {
+          navbarLeft.style.display = 'none';
+        }
+      });
+      
+      navbarCollapse.addEventListener('hide.bs.collapse', function() {
+        document.body.style.overflow = '';
+        // Show navbar-left when menu closes
+        if (window.innerWidth <= 991.98) {
+          navbarLeft.style.display = 'flex';
+        }
+      });
+      
+      // Close menu when clicking nav links on mobile
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          // Close menu on mobile devices
+          if (window.innerWidth <= 991.98 && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+            // Restore body scroll
+            document.body.style.overflow = '';
+          }
+        });
+      });
+      
+      // Close menu when clicking close button
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+          }
+        });
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 991.98) {
+          // On desktop, ensure navbar-left is visible
+          navbarLeft.style.display = '';
+        } else {
+          // On mobile, show/hide based on menu state
+          if (navbarCollapse.classList.contains('show')) {
+            navbarLeft.style.display = 'none';
+          } else {
+            navbarLeft.style.display = 'flex';
+          }
+        }
+      });
+    }
+
+    // ===== FIREBASE FORM SUBMISSION HANDLER FOR CONTACT =====
+    
+    // Function to show success/error message
+    function showMessage(message, type = 'success') {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
+      messageDiv.style.cssText = 'position: fixed; top: 150px; left: 50%; transform: translateX(-50%); z-index: 9999; max-width: 500px;';
+      messageDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      `;
+      document.body.appendChild(messageDiv);
+      
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    }
+
+    // Handle contact form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        
+        try {
+          const formData = new FormData(this);
+          
+          // Prepare data for Firestore
+          const contactData = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            contact: formData.get('contact'),
+            service: formData.get('service'),
+            message: formData.get('message'),
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'pending'
+          };
+          
+          // Save to Firestore
+          await db.collection('contact-inquiries').add(contactData);
+          
+          showMessage('Message sent successfully! Our team will get back to you within 24 hours.', 'success');
+          this.reset();
+          
+        } catch (error) {
+          console.error('Error submitting contact form:', error);
+          showMessage('Failed to send message. Please try again.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

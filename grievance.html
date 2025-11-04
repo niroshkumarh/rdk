@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grievance form - RDK Global Finance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#052169; /* deep navy */
+      --accent:#21c55d; /* green */
+      --ink:#0f172a;
+      --muted:#475569;
+      --light-blue:#f0f9ff;
+      --hero-bg:#e0f2fe;
+    }
+    body{font-family:'League Spartan',sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--light-blue),#f2f7ff);overflow-x:hidden;margin:0;padding:0}
+    
+    /* Smooth scrolling */
+    html{scroll-behavior:smooth;margin:0;padding:0}
+    
+    /* ===== PAGE LOADER ===== */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+      overflow: hidden;
+      background-image: none !important;
+      background-color: #FFFFFF !important;
+    }
+    
+    progress, 
+    ::-webkit-progress-bar, 
+    ::-moz-progress-bar,
+    .progress,
+    .loading-bar,
+    [class*="progress"],
+    [class*="loading-bar"],
+    [id*="progress"],
+    [id*="loading-bar"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+    
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    /* Rollercoaster Loader */
+    .loader-wrapper {
+      position: fixed;
+      z-index: 99999;
+      height: 2em;
+      width: 2em;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    
+    .loader-wrapper:before {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+    }
+    
+    .loader-wrapper .loader {
+      width: 148px;
+      height: 100px;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    
+    .loader-wrapper .loader:after {
+      content: "";
+      top: auto;
+      position: absolute;
+      display: block;
+      animation: shadow 1.2s infinite linear;
+      -moz-animation: shadow 1.2s infinite linear;
+      -webkit-animation: shadow 1.2s infinite linear;
+      bottom: 0em;
+      left: 0;
+      height: 0.25em;
+      width: 1em;
+      border-radius: 50%;
+      background-color: #001A6E;
+      opacity: 0.3;
+    }
+    
+    .loader-wrapper .loader .roller,
+    .loader-wrapper .loader .roller:last-child {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: rollercoaster 1.2s infinite linear;
+      -webkit-transform: rotate(135deg);
+      -moz-animation: rollercoaster 1.2s infinite linear;
+      -moz-transform: rotate(135deg);
+      animation: rollercoaster 1.2s infinite linear;
+      transform: rotate(135deg);
+    }
+    
+    .loader-wrapper .loader .roller:last-child {
+      left: auto;
+      right: 0;
+      -webkit-transform: rotate(-45deg);
+      -webkit-animation: rollercoaster2 1.2s infinite linear;
+      -moz-transform: rotate(-45deg);
+      -moz-animation: rollercoaster2 1.2s infinite linear;
+      transform: rotate(-45deg);
+      animation: rollercoaster2 1.2s infinite linear;
+    }
+    
+    .loader-wrapper .loader .roller:before,
+    .loader-wrapper .loader .roller:last-child:before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: #001A6E;
+      border-radius: 50%;
+    }
+    
+    .loader-wrapper .loader.loader-2:after {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+    
+    .loader-wrapper .loader.loader-2 .roller {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+    
+    .loader-wrapper .loader.loader-3:after {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    
+    .loader-wrapper .loader.loader-3 .roller {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    
+    @-webkit-keyframes rollercoaster {
+      0% { -webkit-transform: rotate(135deg); }
+      8% { -webkit-transform: rotate(240deg); }
+      20% { -webkit-transform: rotate(300deg); }
+      40% { -webkit-transform: rotate(380deg); }
+      45% { -webkit-transform: rotate(440deg); }
+      50% { -webkit-transform: rotate(495deg); opacity: 1; }
+      50.1% { -webkit-transform: rotate(495deg); opacity: 0; }
+      100% { -webkit-transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @-webkit-keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; -webkit-transform: rotate(-45deg); }
+      58% { -webkit-transform: rotate(-160deg); }
+      70% { -webkit-transform: rotate(-240deg); }
+      80% { -webkit-transform: rotate(-300deg); }
+      90% { -webkit-transform: rotate(-340deg); }
+      100% { -webkit-transform: rotate(-405deg); }
+    }
+    
+    @-webkit-keyframes shadow {
+      0% { opacity: 0.3; -webkit-transform: translateX(65px) scale(0.5, 0.5); }
+      8% { -webkit-transform: translateX(30px) scale(2, 2); }
+      13% { -webkit-transform: translateX(0px) scale(1.3, 1.3); }
+      30% { -webkit-transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { -webkit-transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { -webkit-transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { -webkit-transform: translateX(145px) scale(1.2, 1.2); }
+      80% { -webkit-transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { -webkit-transform: translateX(80px) scale(0.8, 0.8); }
+      100% { -webkit-transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    @-moz-keyframes rollercoaster {
+      0% { -moz-transform: rotate(135deg); }
+      8% { -moz-transform: rotate(240deg); }
+      20% { -moz-transform: rotate(300deg); }
+      40% { -moz-transform: rotate(380deg); }
+      45% { -moz-transform: rotate(440deg); }
+      50% { -moz-transform: rotate(495deg); opacity: 1; }
+      50.1% { -moz-transform: rotate(495deg); opacity: 0; }
+      100% { -moz-transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @-moz-keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; -moz-transform: rotate(-45deg); }
+      58% { -moz-transform: rotate(-160deg); }
+      70% { -moz-transform: rotate(-240deg); }
+      80% { -moz-transform: rotate(-300deg); }
+      90% { -moz-transform: rotate(-340deg); }
+      100% { -moz-transform: rotate(-405deg); }
+    }
+    
+    @-moz-keyframes shadow {
+      0% { opacity: 0.3; -moz-transform: translateX(65px) scale(0.5, 0.5); }
+      8% { -moz-transform: translateX(30px) scale(2, 2); }
+      13% { -moz-transform: translateX(0px) scale(1.3, 1.3); }
+      30% { -moz-transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { -moz-transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { -moz-transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { -moz-transform: translateX(145px) scale(1.2, 1.2); }
+      80% { -moz-transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { -moz-transform: translateX(80px) scale(0.8, 0.8); }
+      100% { -moz-transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    @keyframes rollercoaster {
+      0% { transform: rotate(135deg); }
+      8% { transform: rotate(240deg); }
+      20% { transform: rotate(300deg); }
+      40% { transform: rotate(380deg); }
+      45% { transform: rotate(440deg); }
+      50% { transform: rotate(495deg); opacity: 1; }
+      50.1% { transform: rotate(495deg); opacity: 0; }
+      100% { transform: rotate(495deg); opacity: 0; }
+    }
+    
+    @keyframes rollercoaster2 {
+      0% { opacity: 0; }
+      49.9% { opacity: 0; }
+      50% { opacity: 1; transform: rotate(-45deg); }
+      58% { transform: rotate(-160deg); }
+      70% { transform: rotate(-240deg); }
+      80% { transform: rotate(-300deg); }
+      90% { transform: rotate(-340deg); }
+      100% { transform: rotate(-405deg); }
+    }
+    
+    @keyframes shadow {
+      0% { opacity: 0.3; transform: translateX(65px) scale(0.5, 0.5); }
+      8% { transform: translateX(30px) scale(2, 2); }
+      13% { transform: translateX(0px) scale(1.3, 1.3); }
+      30% { transform: translateX(-15px) scale(0.5, 0.5); opacity: 0.1; }
+      50% { transform: translateX(60px) scale(1.2, 1.2); opacity: 0.3; }
+      60% { transform: translateX(130px) scale(2, 2); opacity: 0.05; }
+      65% { transform: translateX(145px) scale(1.2, 1.2); }
+      80% { transform: translateX(120px) scale(0.5, 0.5); opacity: 0.1; }
+      90% { transform: translateX(80px) scale(0.8, 0.8); }
+      100% { transform: translateX(60px); opacity: 0.3; }
+    }
+    
+    body.loading {
+      overflow: hidden;
+    }
+
+    /* ===== NAVBAR (Desktop Design) ===== */
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px 40px 60px;
+      isolation: isolate;
+      position: fixed;
+      width: 100%;
+      height: 124px;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #F1F7FF;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Hamburger menu button - hidden on desktop */
+    .navbar-toggler {
+      display: none;
+      border: none;
+      padding: 4px 8px;
+      background: transparent;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    /* Mobile Contact Button - Hidden on desktop */
+    .mobile-nav-contact {
+      display: none;
+    }
+    
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 30px;
+      height: 3px;
+      background: #001A6E;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background: #001A6E;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler-icon::before {
+      top: -10px;
+    }
+    
+    .navbar-toggler-icon::after {
+      bottom: -10px;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background: transparent;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--brand);
+      width: 136px;
+      height: 100px;
+      z-index: 0;
+    }
+    
+    .logo-image {
+      height: 100px;
+      width: 136px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .navbar-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .navbar-center {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+    
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      width: 452px;
+      height: 64px;
+      z-index: 2;
+      background: #FFFFFF;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0px;
+      gap: 10px;
+      width: 113px;
+      height: 64px;
+      background: transparent;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: 0.02em;
+      color: #001A6E;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .nav-link:first-child {
+      border-radius: 15px 0px 0px 15px;
+    }
+    
+    .nav-link:last-child {
+      border-radius: 0px 15px 15px 0px;
+    }
+    
+    .nav-link:hover {
+      background: #cfe0ff;
+      color: #001A6E;
+    }
+
+    .nav-link.active {
+      background: #cfe0ff;
+      color: #001A6E;
+      font-weight: 500;
+    }
+
+    /* Desktop-only: force middle items (Services, About us) to be square */
+    @media (min-width: 992px) {
+      .navbar-nav .nav-item:not(:first-child):not(:last-child) .nav-link {
+        border-radius: 0px 0px 0px 0px;
+      }
+      /* Ensure Home keeps rounded left corners on hover/active */
+      .navbar-nav .nav-item:first-child .nav-link:hover,
+      .navbar-nav .nav-item:first-child .nav-link.active {
+        border-radius: 15px 0px 0px 15px;
+      }
+    }
+    
+    .navbar-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0px;
+      gap: 16px;
+      width: 223px;
+      height: 64px;
+      z-index: 3;
+      flex-shrink: 0;
+    }
+    
+    .btn-grievance {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      width: 111px;
+      height: 34px;
+      border: 1px solid #001A6E;
+      border-radius: 37px;
+      background: #FFFFFF;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: #001A6E;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-grievance:hover {
+      background: #001A6E;
+      color: #FFFFFF;
+    }
+    
+    .btn-contact {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      width: 96px;
+      height: 34px;
+      background: #89AC46;
+      border-radius: 30px;
+      border: none;
+      font-family: 'League Spartan', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-contact:hover {
+      background: #74a93d;
+      color: #FFFFFF;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1200px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+    }
+    
+    /* Desktop: Ensure navbar-collapse is always visible */
+    @media (min-width: 992px) {
+      .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .navbar-toggler {
+        display: none !important;
+      }
+      
+      .navbar-left {
+        flex-shrink: 0;
+      }
+      
+      /* Hide mobile menu header on desktop */
+      .mobile-menu-header {
+        display: none !important;
+      }
+      
+      /* Hide mobile contact button on desktop */
+      .mobile-nav-contact {
+        display: none !important;
+      }
+    }
+    
+    @media (max-width: 991.98px){
+        /* Show hamburger button on mobile */
+        .navbar-toggler {
+          display: block;
+          margin-left: 0;
+          z-index: 1001;
+          flex-shrink: 0;
+        }
+        
+        .navbar {
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 20px 20px 15px 20px;
+          height: auto;
+          min-height: 80px;
+        }
+        
+        .navbar-left {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 15px;
+        }
+        
+        .navbar-brand {
+          margin-bottom: 0;
+          flex-shrink: 0;
+        }
+        
+        .logo-image {
+          height: 60px;
+          width: auto;
+        }
+        
+        /* Mobile Contact Button */
+        .mobile-nav-contact {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background: #89AC46;
+          color: #FFFFFF;
+          text-decoration: none;
+          border-radius: 30px;
+          font-family: 'League Spartan', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: 0.02em;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+          flex-shrink: 0;
+          margin-left: auto;
+        }
+        
+        .mobile-nav-contact:hover {
+          background: #74a93d;
+          color: #FFFFFF;
+        }
+        
+        /* Collapsed menu styling - Full screen overlay */
+        .navbar-collapse {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #F1F7FF;
+          padding: 0;
+          box-shadow: none;
+          z-index: 1050;
+          overflow-y: auto;
+          flex-direction: column;
+        }
+        
+        /* Mobile Menu Header */
+        .mobile-menu-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          width: 100%;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .mobile-menu-logo {
+          display: flex;
+          align-items: center;
+        }
+        
+        .mobile-logo-image {
+          height: 50px;
+          width: auto;
+        }
+        
+        .mobile-menu-close {
+          background: #000000;
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          padding: 0;
+          transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-close:hover {
+          background: #333333;
+          transform: scale(1.1);
+        }
+        
+        .close-icon {
+          color: #FFFFFF;
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 1;
+        }
+        
+        .navbar-center {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          background: #FFFFFF;
+        }
+        
+        .navbar-nav {
+          width: 100%;
+          flex-direction: column;
+          background: #FFFFFF;
+          border-radius: 0;
+          box-shadow: none;
+          height: auto;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .nav-item:last-child {
+          border-bottom: none;
+        }
+        
+        .nav-link {
+          width: 100%;
+          padding: 18px 20px;
+          border-radius: 0;
+          margin: 0;
+          text-align: left;
+          font-size: 17px;
+          font-weight: 400;
+          color: #001A6E;
+          font-family: 'League Spartan', sans-serif;
+          background: transparent;
+          border: none;
+          transition: all 0.3s ease;
+          letter-spacing: 0.01em;
+        }
+        
+        .nav-link:hover {
+          background: #cfe0ff;
+          color: #001A6E;
+        }
+        
+        .nav-link.active {
+          background: #cfe0ff;
+          color: #001A6E;
+          font-weight: 500;
+        }
+        
+        /* Action Buttons at bottom */
+        .navbar-actions {
+          width: 100%;
+          flex-direction: row;
+          gap: 12px;
+          height: auto;
+          padding: 20px;
+          justify-content: center;
+          align-items: center;
+          border-top: 1px solid rgba(0,0,0,0.1);
+          margin-top: auto;
+        }
+        
+        .btn-grievance {
+          flex: 0 0 auto;
+          width: auto;
+          min-width: 120px;
+          font-size: 14px;
+          padding: 12px 28px;
+          justify-content: center;
+          background: #FFFFFF;
+          border: 1px solid #001A6E;
+          color: #001A6E;
+          border-radius: 30px;
+        }
+        
+        .btn-grievance:hover {
+          background: #001A6E;
+          color: #FFFFFF;
+        }
+        
+        .btn-contact {
+          flex: 0 0 auto;
+          width: auto;
+          min-width: 120px;
+          font-size: 14px;
+          padding: 12px 28px;
+          justify-content: center;
+          background: #89AC46;
+          color: #FFFFFF;
+          border-radius: 30px;
+          border: none;
+        }
+        
+        .btn-contact:hover {
+          background: #74a93d;
+          color: #FFFFFF;
+        }
+    }
+    
+    @media (max-width: 480px){
+        .navbar {
+          padding: 18px 15px 12px 15px;
+          min-height: 70px;
+        }
+        
+        .logo-image {
+          height: 50px;
+        }
+        
+        .mobile-nav-contact {
+          padding: 8px 16px;
+          font-size: 13px;
+        }
+        
+        .navbar-collapse {
+          top: 90px;
+          padding: 15px;
+        }
+        
+        .nav-link {
+          font-size: 14px;
+          padding: 12px 15px;
+        }
+        
+        .btn-grievance, .btn-contact {
+          font-size: 13px;
+          padding: 10px 20px;
+        }
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div class="loader loader-2">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div class="loader loader-3">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    (function() {
+      function hidePageLoader() {
+        var loader = document.getElementById('pageLoader');
+        var body = document.body;
+        if (loader) {
+          loader.classList.add('hidden');
+          setTimeout(function() {
+            body.classList.remove('loading');
+            loader.style.display = 'none';
+          }, 500);
+        } else {
+          body.classList.remove('loading');
+        }
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hidePageLoader, 500);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(hidePageLoader, 500);
+        });
+      }
+      setTimeout(hidePageLoader, 3000);
+    })();
+  </script>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="navbar-left">
+      <a class="navbar-brand" href="#">
+        <img src="Images/Logo.png" alt="RDK Global Finance" class="logo-image">
+      </a>
+      <!-- Mobile Contact Button -->
+      <a class="mobile-nav-contact" href="contact.html">Contact</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Mobile Menu Header -->
+      <div class="mobile-menu-header">
+        <a class="mobile-menu-logo" href="#">
+          <img src="Images/Logo.png" alt="RDK Global Finance" class="mobile-logo-image">
+        </a>
+        <button class="mobile-menu-close" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Close navigation">
+          <span class="close-icon">×</span>
+        </button>
+      </div>
+      <!-- Navigation Links -->
+      <div class="navbar-center">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+        </ul>
+      </div>
+      <!-- Action Buttons -->
+      <div class="navbar-actions">
+        <a class="btn-grievance active" href="grievance.html">Grievance</a>
+        <a class="btn-contact" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <div class="page-content">
+    
+    <!-- ===== GRIEVANCE FORM SECTION ===== -->
+    <section class="section grievance-section">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h6 class="grievance-kicker">WE ARE HERE TO HELP</h6>
+          <div class="grievance-chip">
+            <span class="chip-icon">PDF</span>
+            <span class="chip-text">Grievance Redressal Mechanism</span>
+            <a class="btn btn-download small" href="Images/B1-COI-MOA-AND-AOA-compressed.pdf" target="_blank" rel="noopener"><i class="bi bi-download"></i> Download</a>
+          </div>
+        </div>
+
+        <p class="grievance-sub">Fill up the Form and our team member reach out to you.</p>
+
+        <form class="grievance-form" id="grievance-form">
+          <div class="row g-3">
+            <div class="col-12">
+              <input type="text" class="form-control grievance-control" name="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="tel" class="form-control grievance-control" name="contact" placeholder="Contact" required>
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="email" class="form-control grievance-control" name="email" placeholder="Email" required>
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control grievance-control" name="address" placeholder="Full postal Address" required>
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control grievance-control" name="loanAccountNumber" placeholder="Loan Account Number" required>
+            </div>
+            <div class="col-12 col-md-6 position-relative">
+              <select class="form-control grievance-control select" name="complaintCategory" required>
+                <option value="" selected disabled>Complaint Category</option>
+                <option value="Loan disbursement delay">Loan disbursement delay</option>
+                <option value="Charges linked to delayed payments">Charges linked to delayed payments</option>
+                <option value="Double deduction of EMI">Double deduction of EMI</option>
+                <option value="Recovery practices">Recovery practices</option>
+                <option value="Staff behaviour">Staff behaviour</option>
+                <option value="Others">Others</option>
+              </select>
+              <i class="bi bi-caret-down-fill select-caret"></i>
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control grievance-control" name="incidentDate" placeholder="Date of Incident" required>
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="number" class="form-control grievance-control" name="amount" placeholder="Amount (if applicable)">
+            </div>
+            <div class="col-12">
+              <textarea class="form-control grievance-control" name="description" rows="6" placeholder="Detailed Description" required></textarea>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mt-1">
+            <div class="col-12 col-md-8">
+              <div class="upload-group">
+                <input type="text" class="form-control grievance-control upload-filename" placeholder="Upload supporting document" readonly>
+                <label class="btn btn-upload">
+                  <i class="bi bi-upload"></i>
+                  Upload
+                  <input type="file" class="d-none upload-input" accept=".pdf,.jpg,.jpeg,.png">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-check mt-4">
+            <input class="form-check-input grievance-check" type="checkbox" id="affirm" required>
+            <label class="form-check-label grievance-check-label" for="affirm">I affirm that the information provided in this grievance is true and accurate to the best of my knowledge and belief.</label>
+          </div>
+
+          <div class="form-check mt-3">
+            <input class="form-check-input grievance-check" type="checkbox" id="consent" required>
+            <label class="form-check-label grievance-check-label" for="consent">I consent to the processing and retention of my personal data contained in this form for the purpose of investigating and resolving this grievance, in accordance with the company's Privacy Policy.</label>
+          </div>
+
+          <button type="submit" class="grievance-submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-column footer-logo-column">
+          <div class="footer-logo">
+            <img src="Images/blackLogo.png" alt="RDK Global Finance" class="footer-logo-image">
+          </div>
+          <p class="company-name">RDK Global Finance Limited</p>
+          <p class="company-address">First floor, Jaggi Complex, Infront of Police Line, Nehru Nagar, Raipur, (C.G) 492001</p>
+          <p class="company-phone">+91-9109171311</p>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Company</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="regulatory.html#rbi">RBI Disclaimer</a></li>
+            <li><a href="regulatory.html">Regulatory</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Information</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="grievance.html">Grievance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Social</h5>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 RDK Global Finance Private Limited.</p>
+        <p class="designer">Designed by Lexicon Digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/common.js"></script>
+  
+  <script>
+    // Mobile menu body scroll lock and hide navbar-left
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const navbarLeft = document.querySelector('.navbar-left');
+    
+    if (navbarCollapse && navbarLeft) {
+      // Initial state - ensure navbar-left is visible when menu is closed
+      if (window.innerWidth <= 991.98 && !navbarCollapse.classList.contains('show')) {
+        navbarLeft.style.display = 'flex';
+      }
+      
+      navbarCollapse.addEventListener('show.bs.collapse', function() {
+        document.body.style.overflow = 'hidden';
+        // Hide navbar-left (logo and hamburger) when menu opens
+        if (window.innerWidth <= 991.98) {
+          navbarLeft.style.display = 'none';
+        }
+      });
+      
+      navbarCollapse.addEventListener('hide.bs.collapse', function() {
+        document.body.style.overflow = '';
+        // Show navbar-left when menu closes
+        if (window.innerWidth <= 991.98) {
+          navbarLeft.style.display = 'flex';
+        }
+      });
+      
+      // Close menu when clicking nav links on mobile
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          // Close menu on mobile devices
+          if (window.innerWidth <= 991.98 && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+            // Restore body scroll
+            document.body.style.overflow = '';
+          }
+        });
+      });
+      
+      // Close menu when clicking close button
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+          }
+        });
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 991.98) {
+          // On desktop, ensure navbar-left is visible
+          navbarLeft.style.display = '';
+        } else {
+          // On mobile, show/hide based on menu state
+          if (navbarCollapse.classList.contains('show')) {
+            navbarLeft.style.display = 'none';
+          } else {
+            navbarLeft.style.display = 'flex';
+          }
+        }
+      });
+    }
+
+    // ===== FIREBASE FORM SUBMISSION HANDLER FOR GRIEVANCE =====
+    
+    // Update filename display when file is selected
+    const uploadInput = document.querySelector('.upload-input');
+    const uploadFilename = document.querySelector('.upload-filename');
+    if (uploadInput && uploadFilename) {
+      uploadInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          uploadFilename.value = file.name;
+          console.log('📄 File selected:', file.name, `(${(file.size / 1024).toFixed(2)} KB)`);
+        } else {
+          uploadFilename.value = '';
+        }
+      });
+    }
+    
+    // Function to upload file to Firebase Storage
+    async function uploadFileToStorage(file, folder) {
+      if (!file) return null;
+      
+      // Get storage from window (set by firebase-config.js) or use global
+      const storageInstance = window.storage || storage;
+      if (!storageInstance) {
+        throw new Error('Firebase Storage is not initialized. Please refresh the page.');
+      }
+      
+      const fileName = `${folder}/${Date.now()}_${file.name}`;
+      const storageRef = storageInstance.ref(fileName);
+      
+      try {
+        const snapshot = await storageRef.put(file);
+        const downloadURL = await snapshot.ref.getDownloadURL();
+        return downloadURL;
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        throw error;
+      }
+    }
+
+    // Function to show success/error message
+    function showMessage(message, type = 'success') {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
+      messageDiv.style.cssText = 'position: fixed; top: 150px; left: 50%; transform: translateX(-50%); z-index: 9999; max-width: 500px;';
+      messageDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      `;
+      document.body.appendChild(messageDiv);
+      
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    }
+
+    // Handle grievance form submission
+    const grievanceForm = document.getElementById('grievance-form');
+    if (grievanceForm) {
+      grievanceForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('.grievance-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        
+        try {
+          const formData = new FormData(this);
+          const supportingDocFile = this.querySelector('.upload-input')?.files[0];
+          
+          // Upload supporting document file (non-blocking - save form data even if upload fails)
+          let documentURL = null;
+          let documentFileName = null;
+          let documentFilePath = null;
+          let documentFileSize = null;
+          
+          if (supportingDocFile) {
+            try {
+              documentFileName = supportingDocFile.name;
+              documentFileSize = supportingDocFile.size;
+              documentFilePath = `grievance-documents/${Date.now()}_${supportingDocFile.name}`;
+              
+              documentURL = await uploadFileToStorage(supportingDocFile, 'grievance-documents');
+              console.log('✅ File uploaded successfully!');
+              console.log('📄 File Name:', documentFileName);
+              console.log('📦 File Size:', (documentFileSize / 1024).toFixed(2), 'KB');
+              console.log('📁 Storage Path:', documentFilePath);
+              console.log('🔗 Download URL:', documentURL);
+            } catch (uploadError) {
+              console.warn('⚠️ File upload failed, but saving form data anyway:', uploadError);
+              console.error('❌ Upload error details:', uploadError.code, uploadError.message);
+              // Continue with form submission even if file upload fails
+            }
+          }
+          
+          // Prepare data for Firestore
+          const grievanceData = {
+            fullName: formData.get('fullName'),
+            contact: formData.get('contact'),
+            email: formData.get('email'),
+            address: formData.get('address'),
+            loanAccountNumber: formData.get('loanAccountNumber'),
+            complaintCategory: formData.get('complaintCategory'),
+            incidentDate: formData.get('incidentDate'),
+            amount: formData.get('amount') || null,
+            description: formData.get('description'),
+            // File information for easy viewing in Firestore
+            documentURL: documentURL, // Direct download link (clickable in Firestore)
+            documentFileName: documentFileName, // Original file name
+            documentFilePath: documentFilePath, // Storage path (grievance-documents/timestamp_filename.ext)
+            documentFileSize: documentFileSize, // File size in bytes
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'pending'
+          };
+          
+          // Save to Firestore - use global db from firebase-config.js
+          const dbInstance = window.db || db;
+          if (!dbInstance) {
+            throw new Error('Firestore is not initialized. Please refresh the page.');
+          }
+          const docRef = await dbInstance.collection('grievances').add(grievanceData);
+          console.log('✅ Grievance data saved to Firestore successfully! Document ID:', docRef.id);
+          
+          // Log file mapping confirmation
+          if (documentURL) {
+            console.log('📎 File mapped to form data:');
+            console.log('   - Document ID:', docRef.id);
+            console.log('   - File Name:', documentFileName);
+            console.log('   - File URL:', documentURL);
+            console.log('   - View in Firestore: grievances →', docRef.id);
+          }
+          
+          showMessage('Grievance submitted successfully! Our team will reach out to you soon.', 'success');
+          this.reset();
+          
+          // Reset file upload field
+          const uploadInput = this.querySelector('.upload-input');
+          const uploadFilename = this.querySelector('.upload-filename');
+          if (uploadInput) uploadInput.value = '';
+          if (uploadFilename) uploadFilename.value = '';
+          
+        } catch (error) {
+          console.error('Error submitting grievance:', error);
+          showMessage('Failed to submit grievance. Please try again.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
