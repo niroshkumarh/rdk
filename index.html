@@ -2328,7 +2328,11 @@
     <div class="container">
       <div class="stats-card">
         <div class="stats-image">
-          <img src="Images/Stats_bg.png" alt="RDK Stats - Financial Growth">
+          <picture>
+            <source srcset="Images/Stats_bg.avif" type="image/avif">
+            <source srcset="Images/Stats_bg.webp" type="image/webp">
+            <img src="Images/Stats_bg.png" alt="RDK Stats - Financial Growth" loading="lazy">
+          </picture>
           <div class="hindi-text-overlay">
             <h3>गाँव से शहर तक, आसान</h3>
             <p>फाइनेंस का साथ</p>
